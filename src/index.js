@@ -15,6 +15,11 @@ let instructionInput = document.querySelector("#user-instruction");
     let context ="you are a romantic poem expert and love to write short poems .you mission is to generate a 4 line poem and separate each line with a <br />. make sure follow the user instructions.";
     let apiURL =`https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)
 }&context=${context}&key=${apiKey}`;
+
+let poemElemnt = document.querySelector("#poem");
+poemElemnt.classList.remove("hidden");
+poemElemnt.innerHTML = `<div class="generating">🧭Generating a French poem about ${instructionInput.value}</div>`;
+
     console.log("Generating poem");
     console.log(`prompt: ${prompt}`);
     console.log(`context: ${context}`);
